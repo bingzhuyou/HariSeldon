@@ -6,46 +6,63 @@ public class Account implements Serializable {
 
 	private static final long serialVersionUID = -533698031946372178L;
 
+	private int id;
+
 	private String username;
 	private String password;
+	private String phone;
+	private String email;
 
-	/**
-	 * @param username
-	 * @param password
-	 */
 	public Account(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
 
-	/**
-	 * @return the username
-	 */
+	public Account() {
+	}
+
+	public Account(int id) {
+		this.id = id;
+	}
+
 	public String getUsername() {
 		return username;
 	}
 
-	/**
-	 * @param username
-	 *            the username to set
-	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	/**
-	 * @return the password
-	 */
 	public String getPassword() {
 		return password;
 	}
 
-	/**
-	 * @param password
-	 *            the password to set
-	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return this.id;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
