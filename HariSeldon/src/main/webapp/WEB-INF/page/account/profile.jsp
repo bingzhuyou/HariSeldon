@@ -12,6 +12,8 @@
 <ul>  
     <li><label>id:</label><c:out value="${account.id}" /></li>  
     <li><label>username:</label><c:out value="${account.username}" /></li>  
+    <li><label>phone:</label><c:out value="${account.phone}" /></li>  
+    <li><label>email:</label><c:out value="${account.email}" /></li>  
 </ul>  
 </fieldset> 
 </body>  

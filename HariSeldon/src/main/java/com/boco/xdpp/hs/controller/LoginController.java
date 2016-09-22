@@ -13,7 +13,7 @@ import com.boco.xdpp.hs.service.AccountService;
 
 @Controller  
 @RequestMapping(value = "/login.do")  
-public class LoginController {  
+public class LoginController  extends BocoBaseController {  
   
     @Autowired  
     private AccountService accountService;  

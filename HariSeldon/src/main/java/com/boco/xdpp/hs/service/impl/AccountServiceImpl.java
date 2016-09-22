@@ -29,20 +29,22 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Account read(String username, String password) {
-		Account account = null;
-		if (username.equals("snowolf") && password.equals("zlex")) {
-			account = new Account(1);
-			account.setUsername(username);
-			account.setPassword(password);
+		Account account = accountDao.read(username);
+
+		if (!password.equals(account.getPassword())) {
+			account = null;
 		}
 		return account;
 	}
 
 	@Override
 	public Account read(int id) {
-		Account account = new Account(1);
-		account.setUsername("snowolf");
-		account.setPassword("zlex");
-		return account;
+		return accountDao.read(id);
+	}
+
+	@Override
+	public Account register(Account account) {
+		accountDao.create(account);  
+        return accountDao.read(account.getUsername());
 	}
 }

@@ -12,7 +12,7 @@ import com.boco.xdpp.hs.service.AccountService;
   
 @Controller  
 @RequestMapping("/account.do")  
-public class AccountController {  
+public class AccountController  extends BocoBaseController  {  
   
     @Autowired  
     private AccountService accountService;  
@@ -31,11 +31,18 @@ public class AccountController {
     
     @SuppressWarnings("rawtypes")
 	@RequestMapping(method = RequestMethod.GET)  
-    public Map hello(String username, String password, ModelMap model) {  
-    	  
-        System.out.println(accountService.verify(username, password));  
-  
-        model.put("msg", username);  
+    public Map hello(String username, String password, ModelMap model) { 
+    	if (username==null ||  password==null) {
+            model.put("msg", " username or password is null.");  
+    	}
+    	else {
+            if (accountService.verify(username, password)) {
+                model.put("msg", username + " verify ok. ");  
+            }
+            else {
+                model.put("msg", username + " verify fail. ");  
+            }
+    	}
         return model;  
     }  
 }  

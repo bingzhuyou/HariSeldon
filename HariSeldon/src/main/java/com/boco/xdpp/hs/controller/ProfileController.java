@@ -1,11 +1,17 @@
 package com.boco.xdpp.hs.controller;  
   
+import java.util.Map;
+import java.util.TreeMap;
+
 import org.springframework.beans.factory.annotation.Autowired;  
 import org.springframework.stereotype.Controller;  
 import org.springframework.ui.ModelMap;  
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;  
 import org.springframework.web.bind.annotation.RequestMethod;  
 import org.springframework.web.bind.annotation.RequestParam;   
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.boco.xdpp.hs.domain.Account;  
 import com.boco.xdpp.hs.service.AccountService;  
   
@@ -18,7 +24,7 @@ import com.boco.xdpp.hs.service.AccountService;
  */  
 @Controller  
 @RequestMapping(value = "/profile.do")  
-public class ProfileController {  
+public class ProfileController extends BocoBaseController  {  
     @Autowired  
     private AccountService accountService;  
   
@@ -37,4 +43,12 @@ public class ProfileController {
         // 跳转到用户信息页面  
         return "account/profile";  
     }  
+    
+//    @SuppressWarnings("unchecked")
+//	@ExceptionHandler(RuntimeException.class)  
+//    public String runtimeExceptionHandler(RuntimeException runtimeException) {  
+//       System.out.println(runtimeException.getLocalizedMessage());  
+//  
+//        return "404";  
+//    } 
 }  
