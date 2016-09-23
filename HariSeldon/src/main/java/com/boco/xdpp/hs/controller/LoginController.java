@@ -34,7 +34,7 @@ public class LoginController  extends BocoBaseController {
                 
         if (acc != null) {   
         	System.out.println("new user name : " + acc.getUsername() + ",  pwd : " +  acc.getPassword() + " . verify" + accountService.verify(acc.getUsername(), acc.getPassword()));  
-            return "redirect:profile.do?id=" + acc.getId();  
+            return "redirect:foundation.do?id=" + acc.getId();  
         } else {  
        	 	System.out.println("account is null . " );
             return "redirect:login.do";  

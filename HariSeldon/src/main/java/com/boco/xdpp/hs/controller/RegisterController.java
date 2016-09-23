@@ -12,13 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.boco.xdpp.hs.domain.Account;  
 import com.boco.xdpp.hs.service.AccountService;  
   
-/** 
- * 用户注册控制器 
- *  
- * @author <a href="mailto:zlex.dongliang@gmail.com">梁栋</a> 
- * @version 1.0 
- * @since 1.0 
- */  
 @Controller  
 @RequestMapping(value = "/register.do")  
 public class RegisterController  extends BocoBaseController {  
