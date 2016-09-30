@@ -17,7 +17,7 @@ public class FoundationController extends BocoBaseController  {
     private AccountService accountService;  
   
     @RequestMapping(method = RequestMethod.GET)  
-    public String profile(@RequestParam("id") int id, ModelMap model) {  
+    public String foundation(@RequestParam("id") int id, ModelMap model) {  
         Account account = accountService.read(id);  
         model.addAttribute("account", account);  
   
